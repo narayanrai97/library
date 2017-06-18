@@ -1,27 +1,29 @@
 def add
+    info= {};               # Using Hashe here
     print "Title: "
-    title = gets.chomp
+    info['title'] = gets.chomp
     print "Description: "
-    description = gets.chomp
+    info['description'] = gets.chomp
     print "Year: "
-    year = gets.chomp
+    info['year'] = gets.chomp
     print "ISBN: "
-    isbn = gets.chomp
+    info['isbn'] = gets.chomp
     print "Author: "
-    author = gets.chomp
+    info['author'] = gets.chomp
     print "Genre: "
-    genre = gets.chomp
+    info['genre'] = gets.chomp
     print "Location: "
-    location = gets.chomp
+    info['location'] = gets.chomp
 
-    book = Book.new   # instance of class Book
-    book.title = title
-    book.description = description
-    book.year = year
-    book. isbn = isbn
-    book. author = author
-    book. genre = genre
-    book. location = location
+    book = Book.new(info)   # instance of class Book
+
+    # book.title = title
+    # book.description = description
+    # book.year = year
+    # book. isbn = isbn
+    # book. author = author
+    # book. genre = genre
+    # book. location = location
 
     book.save
 end
@@ -31,19 +33,25 @@ def search
     print "Please enter the book title: "
     title = gets.chomp
     puts ""
-    book = Book.find_by({:title => title})
-    #puts book.inspect                    # in general, the to_s method of the object is called by inspect method
 
-    if book == nil
+    books = Book.where("title LIKE ?", "%#{title}%")   # In Ruby, if the last thing that you're passing in method is a Hash,
+                                                       # you don't have to write the braces{} for the Hash
+
+    #puts book.inspect                                 # in general, the to_s method of the object is called by inspect method
+
+    if books.length == 0
         puts "     Book not found!"
     else
-        puts "     Title: #{book.title}"
-        puts "     Description: #{book.description}"
-        puts "     Year: #{book.year}"
-        puts "     ISBN: #{book.isbn}"
-        puts "     Author: #{book.author}"
-        puts "     Genre: #{book.genre}"
-        puts "     Location: #{book.location}"
+        books.each do |book|
+            puts "     Title:       #{book.title}"
+            puts "     Description: #{book.description}"
+            puts "     Year:        #{book.year}"
+            puts "     ISBN:        #{book.isbn}"
+            puts "     Author:      #{book.author}"
+            puts "     Genre:       #{book.genre}"
+            puts "     Location:    #{book.location}"
+            puts ""
+        end
     end
 end
 
