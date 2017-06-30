@@ -33,7 +33,6 @@ def search
     print "Please enter the book title: "
     title = gets.chomp
     puts ""
-
     books = Book.where("title LIKE ?", "%#{title}%")   # In Ruby, if the last thing that you're passing in method is a Hash,
                                                        # you don't have to write the braces{} for the Hash
 
