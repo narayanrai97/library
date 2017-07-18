@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+        <title>Library</title>
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+        <link href="https://d1gid0oeshv0ej.cloudfront.net/assets/application-8aec3ccce48e2397089a86269bc00e28.css" media="screen" rel="stylesheet" />
+        <script src="https://d1gid0oeshv0ej.cloudfront.net/assets/vendor/modernizr-080c98cad65c169aa56d18f53e011203.js"></script>
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta content="GECY9LnOZnVxoIiRSPPr3/5xY8dAbb8G1TS9JsRtG/U=" name="csrf-token" />
+    </head>
+    <body>
+        <div class='large-8 columns'>
+<h3>Need to Contact Us?</h3>
+<p>
+We'd love to hear from you. You can either reach out to us via this email form, or we also take phone calls or better yet, come by the shop.
+</p>
+<div class='section-container tabs' data-section=''>
+<section class='section'>
+<h5 class='title'>
+<a href='#panel1'>Contact Us</a>
+</h5>
+    <!--<div class="container">-->
+    <!--  <%= yield %>-->
+    <!--</div>-->
+        <form action="mailto:narayanrai97@gmail.com" method="post" enctype="multipart/form-data" name="EmailTestForm">
+            <div style="display:none">
+                <input name="utf8" type="hidden" value="&#x2713;" />
+                <input name="authenticity_token" type="hidden" value="GECY9LnOZnVxoIiRSPPr3/5xY8dAbb8G1TS9JsRtG/U=" />
+            </div>
+            <div class='field'>
+                <b><label for="contact_name">Name</label></b>
+                <input id="contact_name" name="contact[name]" placeholder="john doe" type="text" />
+            </div>
+            <div class='field'>
+                <b><label for="contact_email">Email</label></b>
+                <input id="contact_email" name="contact[email]" placeholder="john.doe@email.com" type="email" />
+            </div>
+            <div class='field'>
+                <b><label for="contact_message">Message</label></b>
+                <textarea id="contact_message" name="contacts[message]" placeholder="enter your brief message here" rows="4">
+                </textarea>
+            </div>
+            <hr>
+            <input class="secondary button" name="commit" type="submit" value="Submit" />
+        </form>
+    </body>
+</html>

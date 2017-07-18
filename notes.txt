@@ -8,3 +8,10 @@
     . author
     . genre
     . dewey
+
+MY OWN 07/04/2017
+- ability to delete a book
+- display only picture and description on main page of catalog
+    . Make the picture as a link
+    . When you click the picture, it'll redirect you to its detail page
+    . Add CRUD on the detail page

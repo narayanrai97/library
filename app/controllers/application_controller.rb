@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  #protect_from_forgery with: :exception
 
   def new
   end
@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     book.genre = params['genre']
     book.location = params['location']
     book.image = params['image']
+    book.picture = params['picture']
     book.save
     redirect_to '/'
   end
@@ -43,12 +44,11 @@ class ApplicationController < ActionController::Base
     @book.genre = params['genre']
     @book.location = params['location']
     @book.image = params['image']
+    @book.picture = params['picture']
 
     @book.save
 
     redirect_to '/'
   end
-
-
 
 end

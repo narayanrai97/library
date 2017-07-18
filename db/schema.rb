@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625184627) do
+ActiveRecord::Schema.define(version: 20170704052431) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 20170625184627) do
     t.string "genre"
     t.string "location"
     t.string "image"
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.integer "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
 end
