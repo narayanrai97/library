@@ -36,14 +36,14 @@
             </tr>
 
             <% @books.each do |book| %>
-                <tr>
+                <tr style="padding: 10px;">
                     <td>
                         <% if book.picture_file_name == nil %>
                             <img src="/blank.png">
                         <% else %>
                             <img src="<%= book.picture.url %>">
                         <% end %>
-                    </td>
+                    </td><br/>
                     <td><%= book.title %></td>
                     <td><%= book.description %></td>
                     <td><%= book.year %></td>

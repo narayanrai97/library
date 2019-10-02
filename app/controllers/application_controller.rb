@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def search_form
+    @books = Book.all
   end
 
   def search
